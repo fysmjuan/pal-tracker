@@ -1,0 +1,1 @@
+App Logging in CFAR : https://docs.cloudfoundry.org/devguide/deploy-apps/streaming-logs.html
