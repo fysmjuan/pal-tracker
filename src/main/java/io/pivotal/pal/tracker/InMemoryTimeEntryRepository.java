@@ -1,10 +1,6 @@
 package io.pivotal.pal.tracker;
 
-import io.pivotal.pal.trackerapi.TimeEntry;
-import org.springframework.stereotype.Repository;
-
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -25,7 +21,7 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository{
     }
 
     @Override
-    public TimeEntry find(long id) {
+    public TimeEntry find(Long id) {
         TimeEntry result = db.get(id);
         return result;
     }
@@ -36,7 +32,7 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository{
     }
 
     @Override
-    public TimeEntry update(long id, TimeEntry timeEntry) {
+    public TimeEntry update(Long id, TimeEntry timeEntry) {
         TimeEntry result = db.get(id);
         if( result != null) {
             timeEntry.setId(id);
@@ -49,7 +45,7 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository{
     }
 
     @Override
-    public void delete(long id) {
+    public void delete(Long id) {
         db.remove(id);
     }
 }
